@@ -8,6 +8,7 @@ export interface Employee {
   standardMonthlyRemuneration: number;
   needsLongTermCareInsurance: boolean;
   municipalTax: number;
+  juneMunicipalTax: number;
   dependents: number;
 }
 

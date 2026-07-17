@@ -68,7 +68,9 @@ export function autoCalcDeductions(
     childcareSupport: newRate ? rates.childcareSupport : 0,
     welfarePension: rates.welfarePension,
     incomeTax,
-    municipalTax: employee.municipalTax,
+    municipalTax: (parseInt(payroll.yearMonth.split("-")[1]) === 6 && employee.juneMunicipalTax)
+      ? employee.juneMunicipalTax
+      : employee.municipalTax,
   };
 }
 

@@ -20,6 +20,7 @@ const blank: Omit<Employee, "id"> = {
   standardMonthlyRemuneration: 0,
   needsLongTermCareInsurance: false,
   municipalTax: 0,
+  juneMunicipalTax: 0,
   dependents: 0,
 };
 
@@ -87,6 +88,10 @@ export default function EmployeeForm({ initial }: Props) {
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">住民税・月額（円）</label>
           <NumberInput value={form.municipalTax} onChange={(v) => set("municipalTax", v)} />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">住民税・6月（円）</label>
+          <NumberInput value={form.juneMunicipalTax} onChange={(v) => set("juneMunicipalTax", v)} />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">扶養人数（人）</label>
