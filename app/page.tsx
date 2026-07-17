@@ -9,7 +9,10 @@ import { useAuth } from "@/contexts/AuthContext";
 
 function currentYearMonth(): string {
   const now = new Date();
-  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+  const m = now.getMonth(); // 0=1月なので、これがそのまま前月の月番号
+  const y = now.getFullYear();
+  if (m === 0) return `${y - 1}-12`;
+  return `${y}-${String(m).padStart(2, "0")}`;
 }
 
 function monthLabel(ym: string): string {
