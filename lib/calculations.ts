@@ -46,7 +46,7 @@ export function autoCalcDeductions(
   const totalPayment = calcTotalPayment(p);
   const insuranceBase = totalPayment - p.advanceExpense;
 
-  const employmentInsurance = Math.floor(Math.max(0, insuranceBase) * 0.006);
+  const employmentInsurance = employee.isOfficer ? 0 : Math.floor(Math.max(0, insuranceBase) * 0.006);
 
   const rates = getInsuranceRates(employee, payroll.yearMonth);
   const newRate = isNewRateMonth(payroll.yearMonth);

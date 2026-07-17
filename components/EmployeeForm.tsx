@@ -21,6 +21,7 @@ const blank: Omit<Employee, "id"> = {
   needsLongTermCareInsurance: false,
   municipalTax: 0,
   juneMunicipalTax: 0,
+  isOfficer: false,
   dependents: 0,
 };
 
@@ -129,6 +130,18 @@ export default function EmployeeForm({ initial }: Props) {
           />
           <label htmlFor="care" className="text-sm text-gray-700">
             介護保険対象（40歳以上）
+          </label>
+        </div>
+        <div className="mt-3 flex items-center gap-2">
+          <input
+            type="checkbox"
+            id="officer"
+            checked={form.isOfficer}
+            onChange={(e) => set("isOfficer", e.target.checked)}
+            className="w-4 h-4"
+          />
+          <label htmlFor="officer" className="text-sm text-gray-700">
+            役員（雇用保険なし）
           </label>
         </div>
       </div>
