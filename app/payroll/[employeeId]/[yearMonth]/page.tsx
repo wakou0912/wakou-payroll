@@ -97,9 +97,20 @@ export default function PayrollPage() {
   const handleSave = async () => {
     if (!payroll || !user) return;
     setSaving(true);
-    await savePayroll(user.uid, payroll);
-    setSaving(false);
-    alert("保存しました");
+    try {
+      console.log("[保存開始]", { userId: user.uid, payrollId: payroll.id });
+      const timeout = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error("タイムアウト（15秒）: Firestoreに接続できません")), 15000)
+      );
+      await Promise.race([savePayroll(user.uid, payroll), timeout]);
+      console.log("[保存完了]");
+      alert("保存しました");
+    } catch (e) {
+      console.error("[保存エラー]", e);
+      alert("保存に失敗しました: " + (e instanceof Error ? e.message : String(e)));
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handlePDF = async (mode: "download" | "preview" = "download") => {

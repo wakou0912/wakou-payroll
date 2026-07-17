@@ -16,7 +16,7 @@ export interface Payroll {
   employeeId: string;
   yearMonth: string; // "2026-05"
   isBonus: boolean;
-  bonusName?: string;
+  bonusName: string | null;
 
   // 支給
   baseSalary: number;

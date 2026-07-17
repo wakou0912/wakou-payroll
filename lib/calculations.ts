@@ -82,7 +82,7 @@ export function buildInitialPayroll(
     employeeId: employee.id,
     yearMonth,
     isBonus: false,
-    bonusName: undefined,
+    bonusName: null,
     baseSalary: employee.baseSalary,
     overtimeAllowance: 0,
     communicationAllowance: employee.communicationAllowance,
