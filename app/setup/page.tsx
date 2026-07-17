@@ -15,6 +15,8 @@ const INITIAL_EMPLOYEES: Omit<Employee, "id">[] = [
     standardMonthlyRemuneration: 380000,
     needsLongTermCareInsurance: false,
     municipalTax: 0,
+    juneMunicipalTax: 0,
+    isOfficer: false,
     dependents: 0,
   },
   {
@@ -26,6 +28,8 @@ const INITIAL_EMPLOYEES: Omit<Employee, "id">[] = [
     standardMonthlyRemuneration: 280000,
     needsLongTermCareInsurance: false,
     municipalTax: 0,
+    juneMunicipalTax: 0,
+    isOfficer: false,
     dependents: 0,
   },
   {
@@ -37,6 +41,8 @@ const INITIAL_EMPLOYEES: Omit<Employee, "id">[] = [
     standardMonthlyRemuneration: 560000,
     needsLongTermCareInsurance: true,
     municipalTax: 0,
+    juneMunicipalTax: 0,
+    isOfficer: false,
     dependents: 0,
   },
   {
@@ -48,6 +54,8 @@ const INITIAL_EMPLOYEES: Omit<Employee, "id">[] = [
     standardMonthlyRemuneration: 180000,
     needsLongTermCareInsurance: false,
     municipalTax: 0,
+    juneMunicipalTax: 0,
+    isOfficer: false,
     dependents: 0,
   },
   {
@@ -59,6 +67,8 @@ const INITIAL_EMPLOYEES: Omit<Employee, "id">[] = [
     standardMonthlyRemuneration: 260000,
     needsLongTermCareInsurance: false,
     municipalTax: 0,
+    juneMunicipalTax: 0,
+    isOfficer: false,
     dependents: 0,
   },
 ];
