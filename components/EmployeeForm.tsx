@@ -28,7 +28,7 @@ const blank: Omit<Employee, "id"> = {
 export default function EmployeeForm({ initial }: Props) {
   const router = useRouter();
   const { user } = useAuth();
-  const [form, setForm] = useState<Omit<Employee, "id">>(initial ?? blank);
+  const [form, setForm] = useState<Omit<Employee, "id">>({ ...blank, ...initial });
   const [saving, setSaving] = useState(false);
 
   const set = (key: keyof typeof form, value: unknown) =>
